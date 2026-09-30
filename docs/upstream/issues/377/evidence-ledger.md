@@ -396,6 +396,50 @@ limitations:
   - "Sem uma regra de precedência aprovada, não é possível transformar a identidade em critério de aceitação ou validar uma solução."
 ```
 
+```yaml
+id: D-003
+claim: "A regra prevalente da Issue 377 é apresentar a experiência como 'assistente de compras com IA do Zé Delivery', sem se identificar como o próprio Zé."
+kind: decision
+source:
+  type: interview
+  uri: "Confirmação explícita do stakeholder no intake"
+  retrieved_at: "2026-09-30"
+scope:
+  population: "Todas as apresentações, autorreferências e critérios de aceitação de identidade no WhatsApp"
+  time_window: "Vigente para a definição da Issue 377"
+freshness: current
+relationship: supports
+criticality: critical
+status: evidenced
+limitations:
+  - "A decisão prevalece para esta iniciativa sobre o exemplo de redação em E-005; a atualização ou aprovação formal do documento de Ética continua necessária antes do lançamento."
+  - "Ela não substitui aprovações finais de Brand Core, Ética e Jurídico."
+```
+
+```yaml
+id: E-014
+claim: "A amostra recente de produção contém workflows com env:prod e git.commit.sha 85c6f036e8829060a2ff1eadd66be633942562c1, o mesmo commit do código analisado; ao menos uma sessão traz a abertura 'Zé no Zap' e a apresentação de endereço antes da interação subsequente."
+kind: fact
+source:
+  type: observability
+  uri: "Datadog LLM Observability, amostra de workflows whatsapp_message consultada em 2026-09-30"
+  retrieved_at: "2026-09-30"
+scope:
+  population: "Uma sessão dentro dos quatro workflows recentes indexados"
+  time_window: "2026-09-15 a 2026-09-23"
+freshness: current
+relationship: supports
+criticality: critical
+status: evidenced
+limitations:
+  - "Demonstra que ao menos uma superfície atual usa o commit analisado; não mede incidência em toda a população."
+  - "O conteúdo conversacional e qualquer dado pessoal da sessão não foram reproduzidos neste repositório."
+```
+
+## Atualização de identidade — 2026-09-30
+
+`U-004` está resolvida para a definição da Issue por D-003. O exemplo “Sou o Zé, assistente virtual” em E-005 permanece como contradição documental a atualizar pelas áreas responsáveis, mas não define mais a regra de produto desta iniciativa.
+
 ## Atualização da lacuna de produção — 2026-09-30
 
 O recorte recente confirma que as jornadas e as superfícies de resposta continuam instrumentadas em produção (E-009), mas é pequeno demais para estimar prevalência. O export histórico oferece profundidade de traces (E-010), mas antecede o teste de 24/07 e não declara sua consulta de origem. O Datadog acessível hoje não retorna a semana do disparo (E-011). `U-003` permanece crítico até que o export/consulta original do teste seja recuperado ou a ausência de prevalência seja aceita explicitamente como risco.

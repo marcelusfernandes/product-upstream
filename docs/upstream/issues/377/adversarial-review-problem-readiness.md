@@ -20,3 +20,10 @@
 ## Encaminhamento aplicado
 
 O framing foi decomposto em `problem-framing.md`. A definição da dimensão em escopo é agora concreta, mas U-004 bloqueia Knowledge e qualquer transição para Ready.
+
+## Checagem após D-003
+
+- **Veredito:** `Problem Definition = pass`; `Problem Knowledge = fail`.
+- **Razão:** D-003 resolve a precedência de identidade para a iniciativa. Entretanto, U-003 permanece: os traces não permitem estimar prevalência, jornada dominante, severidade, satisfação ou impacto atual.
+- **Evidência adicional:** E-014 conecta uma sessão recente `env:prod` ao commit analisado e à abertura “Zé no Zap”, mas tem escopo de uma sessão.
+- **Recomendação:** manter `Problem = Investigate` até o stakeholder aceitar explicitamente U-003 como risco para uma correção mandatória de conformidade, com métricas de aderência em vez de métricas de impacto.

@@ -82,12 +82,22 @@ Os traces dão exemplos e sinais, mas não revelam recência, prevalência, caus
 
 A revisão independente reprovou `Problem = Ready`: ela identificou que o framing anterior misturava problemas de identidade/tom com falhas de contexto, catálogo e privacidade, e que a regra de identidade tem fontes conflitantes. O problema foi decomposto em quatro dimensões (ver `problem-framing.md`).
 
-Após a decomposição, **Problem Definition volta a met** para a dimensão em escopo da Issue: o assistente não possui uma identidade conversacional única, aprovada e operacionalizada entre abertura, prompts e guardrails. **Problem Knowledge permanece not-met**, pois `U-004` pode alterar a regra central e os critérios de aceitação.
+Após a decomposição, **Problem Definition volta a met** para a dimensão em escopo da Issue: o assistente não possuía uma identidade conversacional única, aprovada e operacionalizada entre abertura, prompts e guardrails. O stakeholder resolveu `U-004` por D-003: a identidade prevalente é **assistente de compras com IA do Zé Delivery**, sem se identificar como o próprio Zé. A transição de Knowledge depende apenas da checagem adversarial final dessa decisão.
 
 | Objeto | Definition | Knowledge | Estado | Evidências |
 |---|---|---|---|---|
 | Problem | concrete | unknown | Investigate | E-002, E-004–E-007, E-009–E-013, U-004 |
 | Solution | vague | unknown | Explore | E-004, E-005, U-004 |
+
+## Reassess final da revisão adversarial
+
+A checagem independente posterior a D-003 concluiu:
+
+- **Problem Definition = met** para identidade/transparência;
+- **Problem Knowledge = not-met** para priorização por prevalência, severidade ou impacto mensurável;
+- E-014 confirma que ao menos uma sessão recente de produção usa o commit analisado e mantém a abertura “Zé no Zap”, mas não resolve frequência.
+
+O único gate remanescente é decidir se a obrigatoriedade de identidade (D-003), somada à ocorrência atual observada (E-014), basta para avançar como correção de conformidade — com métricas de sucesso de aderência — apesar de U-003. Sem essa aceitação explícita, `Problem` permanece `Investigate`.
 
 ## Human gate — coorte de decisão para U-003
 

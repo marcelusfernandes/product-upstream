@@ -6,7 +6,7 @@
 
 ## Problem statement
 
-O assistente de compras no WhatsApp não possui uma identidade conversacional única, aprovada e aplicada de modo consistente. A implementação atual se apresenta e se comporta como “Zé” em algumas superfícies, enquanto Marketing enquadra o produto como assistente de compras e Ética exige transparência contínua sobre a automação. A regra de precedência entre essas formulações não está resolvida (U-004).
+O assistente de compras no WhatsApp não aplica de modo consistente a identidade conversacional definida para a iniciativa. A implementação atual se apresenta e se comporta como “Zé” em algumas superfícies, enquanto a regra prevalente é apresentar a experiência como **assistente de compras com IA do Zé Delivery**, sem se identificar como o próprio Zé (D-003).
 
 Isso impede avaliar de forma consistente se uma resposta representa corretamente o produto e aumenta o risco de comunicações pouco claras ou antropomorfizadas. Esse risco é uma inferência de E-004, E-005 e E-007; não é uma medida causal de confiança ou satisfação.
 
@@ -19,7 +19,7 @@ Isso impede avaliar de forma consistente se uma resposta representa corretamente
 
 ## Estado desejado
 
-Pessoas usuárias devem receber uma apresentação e uma autorreferência consistentes, transparentes sobre IA e compatíveis com os limites de Marketing, Ética e Jurídico aprovados. O assistente deve ajudar a compra com clareza e usar leveza apenas quando não comprometer fatos, segurança ou entendimento (E-004, E-005).
+Pessoas usuárias devem receber uma apresentação e uma autorreferência consistentes como assistente de compras com IA do Zé Delivery, transparentes sobre IA e compatíveis com os limites de Marketing, Ética e Jurídico aprovados. O assistente deve ajudar a compra com clareza e usar leveza apenas quando não comprometer fatos, segurança ou entendimento (E-004, E-005, D-003).
 
 ## População e contexto
 
@@ -29,7 +29,7 @@ Pessoas que usam o assistente de compras no WhatsApp. A evidência histórica di
 
 | Dimensão | Evidência | Relação com a Issue |
 |---|---|---|
-| Identidade e transparência | E-002, E-004, E-005, E-007, U-004 | Núcleo da Issue; precisa regra aprovada. |
+| Identidade e transparência | E-002, E-004, E-005, E-007, D-003 | Núcleo da Issue; regra de produto definida, com atualização documental pendente. |
 | Tom comercial e álcool | E-004, E-005, E-006, E-007, E-012 | Em escopo somente quando expressa a identidade aprovada ou conflita com limites éticos. |
 | Continuidade/contexto e catálogo | E-006, E-007 | Evidência de estranheza, mas causa operacional separada; não será tratada como problema de tom. |
 | Privacidade e exposição de endereço | E-005, E-006, E-007 | Risco crítico separado; não será resolvido por uma mudança editorial. |
@@ -52,6 +52,6 @@ Pessoas que usam o assistente de compras no WhatsApp. A evidência histórica di
 2. A estranheza decorre principalmente de falhas de continuidade/contexto; uma mudança de tom não a resolveria.
 3. As duas dimensões coexistem, mas requerem intervenções e métricas independentes.
 
-## Único gap crítico
+## Gap remanescente para lançamento
 
-**U-004:** reconciliação formal da identidade. Sem ela, não há critério de aceitação nem base para decidir solução.
+Atualizar e aprovar formalmente os documentos de Marketing, Ética e Jurídico com a regra D-003. Esse é um gate de lançamento/aceitação da solução, não bloqueia mais a formulação do Problem.
