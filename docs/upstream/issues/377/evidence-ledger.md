@@ -336,6 +336,46 @@ limitations:
   - "As contagens não medem satisfação, causalidade, prevalência após 24/07 ou aderência a toda a experiência."
 ```
 
+```yaml
+id: D-002
+claim: "O stakeholder autorizou continuar o upstream usando os traces disponíveis e encerrar a investigação adicional em logs."
+kind: decision
+source:
+  type: interview
+  uri: "Decisão registrada na conversa de intake"
+  retrieved_at: "2026-09-30"
+scope:
+  population: "Formulação e priorização qualitativa do Problem da Issue 377"
+  time_window: "Baseline histórico de junho e amostra recente de julho-setembro"
+freshness: current
+relationship: supports
+criticality: critical
+status: evidenced
+limitations:
+  - "A decisão não converte as amostras em medida de prevalência, satisfação ou impacto atual."
+  - "Métricas de sucesso da solução não podem alegar baseline quantitativo de incidência com base nesses traces."
+```
+
+```yaml
+id: E-013
+claim: "A busca no worktree WhatsApp não localizou outro export bruto de traces do teste de 24/07: os candidatos encontrados são evidência de pytest local de observability e uma captura de fluxo de debug datada de 28/07."
+kind: fact
+source:
+  type: repository
+  uri: "/Users/bruno.segantin/orca/workspaces/ze-consumer-whatsapp-orchestrator-app/melhoria-tom-de-voz/{artifacts/evidencia-testes-datadog-llmobs.txt,whatsapp-flow-full-conversation-20260728.png}"
+  retrieved_at: "2026-09-30"
+scope:
+  population: "Arquivos rastreados, não rastreados e ignorados do worktree, filtrados por nomes ligados a trace/export/Datadog"
+  time_window: "Estado do worktree no momento da busca"
+freshness: current
+relationship: constrains
+criticality: supporting
+status: evidenced
+limitations:
+  - "A ausência de arquivo neste worktree não prova que o export não exista em outro ambiente, máquina, conta ou sistema."
+  - "A captura de debug não é evidência de tráfego de produção nem de prevalência."
+```
+
 ## Atualização da lacuna de produção — 2026-09-30
 
 O recorte recente confirma que as jornadas e as superfícies de resposta continuam instrumentadas em produção (E-009), mas é pequeno demais para estimar prevalência. O export histórico oferece profundidade de traces (E-010), mas antecede o teste de 24/07 e não declara sua consulta de origem. O Datadog acessível hoje não retorna a semana do disparo (E-011). `U-003` permanece crítico até que o export/consulta original do teste seja recuperado ou a ausência de prevalência seja aceita explicitamente como risco.

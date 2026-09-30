@@ -14,3 +14,10 @@
 - **Affected artifacts:** evidence-ledger.md, problem-exploration.md, human-gate-decision-cohort.md.
 - **Status:** approved.
 - **Owner approval ref:** input explícito do stakeholder em 2026-09-30: "pode usar o de junho tbm, nao tem problema".
+
+## Checkpoint posterior — continuidade com traces disponíveis
+
+- **Date:** 2026-09-30
+- **Decision:** o stakeholder autorizou continuar o upstream com os traces disponíveis e encerrar a busca adicional em logs (D-002).
+- **Scope:** a autorização aceita o uso qualitativo do baseline de junho e da amostra recente; não aceita inferência de prevalência, satisfação ou impacto atual.
+- **Impact:** a lacuna de prevalência deixa de bloquear a formulação do Problem, mas permanece como limitação para métricas de outcome da solução.

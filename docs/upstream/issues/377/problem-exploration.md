@@ -75,7 +75,8 @@ Os traces dão exemplos e sinais, mas não revelam recência, prevalência, caus
 - O baseline histórico está autorizado como fonte complementar (D-001), mas antecede o teste em escopo e não resolve `U-003`.
 - A hipótese implícita de que “mano” é o padrão prioritário é contrariada no baseline (E-012).
 - A formulação do problema continua concreta: identidade inadequadamente personificada, transparência insuficiente e linguagem/contexto que conflitam com Marketing e Ética são riscos observáveis (E-004–E-007, E-012).
-- **Problem Knowledge permanece not-met**: a coorte do teste de 24/07 e a prevalência/impacto atual ainda não foram recuperados ou aceitos como risco.
+- O worktree não contém outro export bruto da coorte de 24/07 (E-013). O stakeholder autorizou prosseguir com os traces disponíveis (D-002).
+- **Problem Knowledge está pendente de revisão adversarial**: a limitação de prevalência atual foi explicitamente aceita para a formulação qualitativa do problema, mas não para alegações de impacto mensurável.
 
 ## Human gate — coorte de decisão para U-003
 
