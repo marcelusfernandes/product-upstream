@@ -267,15 +267,75 @@ scope:
   population: "Registros preservados no dataset de inputs de busca de produção"
   time_window: "2026-06-05 a 2026-06-16, inferido do componente temporal dos trace IDs"
 freshness: stale
-relationship: supports
+relationship: contradicts
 criticality: critical
 status: evidenced
 limitations:
   - "O arquivo não inclui timestamp de turno, ambiente, tenant, critério de exportação ou transcript completo; a janela é uma inferência técnica dos IDs."
   - "Os 129 traces não equivalem a 129 conversas; a contagem observada de conversation_id é 56."
-  - "A faixa técnica conflita com a data de teste 23/07 informada pelo stakeholder e requer reconciliação de escopo."
+  - "A faixa técnica antecede o disparo confirmado em 24/07/2026 (E-011); este export não deve ser tratado como a coorte do teste da Issue 377."
+```
+
+```yaml
+id: E-011
+claim: "O disparo do teste em escopo ocorreu em 24/07/2026; uma busca ampla no LLM Observability entre 24 e 31/07 não retornou spans para ml_app=ze-consumer-whatsapp-orchestrator."
+kind: fact
+source:
+  type: interview+observability
+  uri: "Confirmação do stakeholder no intake; Datadog LLM Observability search_llmobs_spans sem filtro de tipo/raiz"
+  retrieved_at: "2026-09-30"
+scope:
+  population: "Coorte do teste disparado em 24/07/2026 e spans atualmente acessíveis no Datadog"
+  time_window: "2026-07-24 a 2026-07-31"
+freshness: current
+relationship: constrains
+criticality: critical
+status: evidenced
+limitations:
+  - "Resultado vazio não demonstra ausência de tráfego no teste; pode refletir retenção, tenant, identificador de aplicação, permissões ou caminho de instrumentação distintos."
+  - "A data do disparo é fato informado pelo stakeholder; a fonte operacional do export original ainda não foi localizada."
+```
+
+```yaml
+id: D-001
+claim: "O stakeholder aprovou usar o dataset de junho como baseline histórico complementar na investigação da Issue 377."
+kind: decision
+source:
+  type: interview
+  uri: "Decisão registrada na conversa de intake"
+  retrieved_at: "2026-09-30"
+scope:
+  population: "Análise de Problem da Issue 377"
+  time_window: "Baseline de 2026-06-05 a 2026-06-16; sem inferência de prevalência atual"
+freshness: current
+relationship: supports
+criticality: critical
+status: evidenced
+limitations:
+  - "A decisão autoriza o uso complementar do baseline, mas não converte a coorte de junho na coorte do teste de 24/07."
+  - "Prevalência e impacto atual permanecem em U-003 até nova evidência ou aceitação explícita do risco."
+```
+
+```yaml
+id: E-012
+claim: "Nas 109 respostas anteriores presentes em 45 conversas do baseline de junho, 'mano' ocorre 0 vezes; 'Bora' ocorre 12 vezes, 'Zé resolve' 3 vezes e não há apresentação explícita como 'assistente de compras com IA'."
+kind: fact
+source:
+  type: repository
+  uri: "/Users/bruno.segantin/orca/workspaces/ze-consumer-whatsapp-orchestrator-app/melhoria-tom-de-voz/tests/search_evals/datasets/prod_search_inputs.jsonl"
+  retrieved_at: "2026-09-30"
+scope:
+  population: "109 respostas anteriores não vazias, em 45 conversation_ids, no baseline histórico"
+  time_window: "2026-06-05 a 2026-06-16, inferido dos trace IDs"
+freshness: stale
+relationship: contradicts
+criticality: critical
+status: evidenced
+limitations:
+  - "A ausência no campo prev_assistant não demonstra ausência nas aberturas ou em outros caminhos; o dataset é voltado a inputs de busca e não é transcript completo."
+  - "As contagens não medem satisfação, causalidade, prevalência após 24/07 ou aderência a toda a experiência."
 ```
 
 ## Atualização da lacuna de produção — 2026-09-30
 
-O recorte recente confirma que as jornadas e as superfícies de resposta continuam instrumentadas em produção (E-009), mas é pequeno demais para estimar prevalência. O export histórico oferece profundidade de traces (E-010), mas pertence a uma janela diferente e não declara sua consulta de origem. `U-003` permanece crítico até que a coorte de decisão seja reconciliada e/ou a prevalência atual seja aceita explicitamente como risco.
+O recorte recente confirma que as jornadas e as superfícies de resposta continuam instrumentadas em produção (E-009), mas é pequeno demais para estimar prevalência. O export histórico oferece profundidade de traces (E-010), mas antecede o teste de 24/07 e não declara sua consulta de origem. O Datadog acessível hoje não retorna a semana do disparo (E-011). `U-003` permanece crítico até que o export/consulta original do teste seja recuperado ou a ausência de prevalência seja aceita explicitamente como risco.

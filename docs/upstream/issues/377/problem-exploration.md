@@ -19,6 +19,12 @@ Ainda não há exemplos de conversas, fluxos, segmentos, frequência, métricas,
 | H-003 | Restrições jurídicas e éticas não estão traduzidas em regras de comportamento conversacional. | Requisitos normativos + lacunas identificadas em respostas atuais. | As regras já estão implementadas e a estranheza decorre de outra causa. |
 | H-004 | A inconsistência entre jornadas causa respostas percebidas como estranhas. | Comparação entre saudações, recomendações, recusas e recuperações. | As jornadas analisadas são coerentes e a estranheza tem outra origem. |
 
+## Checagem do sinal original no baseline histórico
+
+O sinal original menciona reduzir o uso de “mano”. A análise agregada das 109 respostas anteriores disponíveis no baseline não encontrou nenhuma ocorrência do termo (E-012). Portanto, reduzir “mano” não é um problema mensurável nessa amostra e não deve ser usado como proxy do desalinhamento.
+
+No mesmo recorte, “Bora” aparece 12 vezes e “Zé resolve” três. Também não há apresentação explícita como **assistente de compras com IA do Zé Delivery** no campo analisado (E-012). Isso apoia investigar identidade e padrões de linguagem, mas não prova ausência dessa identificação nas aberturas, pois o dataset não é transcript completo.
+
 ## Impactos a verificar
 
 - Compreensão de que a pessoa está interagindo com um assistente de compras com IA do Zé Delivery.
@@ -51,7 +57,7 @@ Esses impactos são hipóteses de investigação, não resultados comprovados.
 
 ### Problem Knowledge — not-met
 
-Os traces dão exemplos e sinais, mas não revelam recência, prevalência, causalidade, satisfação, abandono ou a distribuição dos padrões por jornada. O dataset histórico contém 129 traces em 56 conversas na faixa técnica de 05–16/06/2026 (E-010); o recorte recente de 23/07–30/09 retorna quatro workflows em duas sessões, cobrindo small_talk, address e commerce (E-009). A segunda amostra confirma continuidade de jornadas, mas não mede sua frequência. A incoerência entre a data de teste informada (23/07) e a janela do export histórico precisa ser resolvida antes de usar os dados para priorização. A incógnita `U-003` pode mudar a priorização e a formulação de impacto.
+Os traces dão exemplos e sinais, mas não revelam recência, prevalência, causalidade, satisfação, abandono ou a distribuição dos padrões por jornada. O dataset histórico contém 129 traces em 56 conversas na faixa técnica de 05–16/06/2026 (E-010); ele antecede o disparo confirmado do teste em 24/07/2026 (E-011). O recorte recente de 23/07–30/09 retorna quatro workflows em duas sessões, cobrindo small_talk, address e commerce (E-009), enquanto a consulta ampla da semana do disparo não retorna spans (E-011). A segunda amostra confirma continuidade de jornadas, mas não mede sua frequência. A coorte original do teste deve ser recuperada antes de usar dados para priorização. A incógnita `U-003` pode mudar a priorização e a formulação de impacto.
 
 ### Estados derivados
 
@@ -64,12 +70,19 @@ Os traces dão exemplos e sinais, mas não revelam recência, prevalência, caus
 
 **U-003: validar em recorte atual quais padrões continuam ativos, em quais jornadas e com qual frequência/impacto.** Isso separa defeitos históricos de comportamentos atuais e permite priorizar o problema sem confundir tom com falhas de contexto, segurança ou dados.
 
+### Re-assessment após baseline complementar
+
+- O baseline histórico está autorizado como fonte complementar (D-001), mas antecede o teste em escopo e não resolve `U-003`.
+- A hipótese implícita de que “mano” é o padrão prioritário é contrariada no baseline (E-012).
+- A formulação do problema continua concreta: identidade inadequadamente personificada, transparência insuficiente e linguagem/contexto que conflitam com Marketing e Ética são riscos observáveis (E-004–E-007, E-012).
+- **Problem Knowledge permanece not-met**: a coorte do teste de 24/07 e a prevalência/impacto atual ainda não foram recuperados ou aceitos como risco.
+
 ## Human gate — coorte de decisão para U-003
 
-O dataset histórico e a consulta recente não representam a mesma janela. O upstream não vai presumir que 129 traces de 05–16/06/2026 representem o teste de 23/07 mencionado no intake, nem que quatro workflows recentes sejam suficientes para medir incidência.
+O dataset histórico antecede o teste confirmado de 24/07/2026, e a consulta ampla dessa semana está vazia no Datadog acessível hoje. O upstream não vai presumir que 129 traces de 05–16/06 representam o teste de julho, nem que quatro workflows recentes sejam suficientes para medir incidência.
 
-- **Question:** qual coorte deve embasar a priorização da Issue 377: o export histórico de 05–16/06, uma coorte ainda não localizada de 23/07 em diante, ou ambos com papéis distintos?
-- **Options:** (a) confirmar que o export de junho é o teste em escopo; (b) indicar/localizar o export de 23/07 ou a consulta Datadog correspondente; (c) usar junho para mapear padrões e aceitar explicitamente a ausência de prevalência atual como risco.
-- **Recommendation:** opção (b); até lá, usar junho apenas como evidência histórica de padrões e o recorte recente apenas como evidência de que jornadas/superfícies seguem ativas.
+- **Question:** onde está o export ou a consulta Datadog original do teste disparado em 24/07/2026?
+- **Options:** (a) indicar/localizar o export anonimizado do teste; (b) indicar tenant, ml_app, ambiente ou query de origem; (c) aceitar explicitamente que a priorização use apenas evidência histórica e ausência de prevalência atual como risco.
+- **Recommendation:** opção (a) ou (b); até lá, usar junho apenas como evidência histórica de padrões e o recorte recente apenas como evidência de que jornadas/superfícies seguem ativas.
 - **Impact:** sem essa decisão, o upstream não pode ordenar jornadas por frequência/impacto atual; `Problem` permanece `Investigate` e `Solution` permanece `Explore`.
 - **Blocks:** formulação de impacto mensurável, critérios de sucesso e qualquer transição para `Problem = Ready`.
