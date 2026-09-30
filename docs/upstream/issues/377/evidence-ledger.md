@@ -182,7 +182,7 @@ claim: "Quais padrões observados continuam ativos, em quais jornadas ocorrem e 
 kind: unknown
 source:
   type: observation
-  uri: "A validar com recorte atual de traces, telemetria e revisão de fluxos"
+  uri: "A validar com reconciliação entre export histórico, recorte recente de LLM Observability e definição da coorte de decisão"
   retrieved_at: "2026-09-30"
 scope:
   population: "Usuários atuais do assistente de compras com IA do Zé Delivery"
@@ -192,7 +192,8 @@ relationship: does-not-resolve
 criticality: critical
 status: unverified
 limitations:
-  - "Sem esta verificação, não é possível decidir quais jornadas devem ser alteradas primeiro ou atribuir efeito a uma mudança de tom."
+  - "O export histórico e a consulta recente cobrem populações e janelas diferentes (E-009, E-010); não permitem estimar prevalência atual ou impacto causal."
+  - "A data informada no intake (23/07) conflita com a faixa técnica de 05–16/06/2026 derivada dos trace IDs do export histórico (E-010)."
 ```
 
 ```yaml
@@ -233,3 +234,48 @@ status: evidenced
 limitations:
   - "Uma busca de código não prova ausência de verificação manual ou externa ao repositório."
 ```
+
+```yaml
+id: E-009
+claim: "No recorte de 2026-07-23 a 2026-09-30, o LLM Observability retornou quatro workflows raiz whatsapp_message, de duas sessões, todos com tag env:prod; os quatro outputs cobrem small_talk (2), address (1) e commerce (1)."
+kind: fact
+source:
+  type: observability
+  uri: "Datadog LLM Observability: search_llmobs_spans(ml_app=ze-consumer-whatsapp-orchestrator, span_kind=workflow, span_name=whatsapp_message, root_spans_only=true); search de output_guardrails"
+  retrieved_at: "2026-09-30"
+scope:
+  population: "Workflows raiz indexados e acessíveis com os filtros especificados"
+  time_window: "2026-07-23 a 2026-09-30"
+freshness: current
+relationship: constrains
+criticality: critical
+status: evidenced
+limitations:
+  - "A amostra contém quatro turnos de duas sessões; é evidência de continuidade de superfícies/jornadas, não de frequência na população."
+  - "As consultas iniciais filtradas como span_kind=agent e root_spans_only retornaram vazio porque a raiz instrumentada é workflow, não agent."
+```
+
+```yaml
+id: E-010
+claim: "O dataset versionado prod_search_inputs.jsonl contém 129 registros e 129 trace IDs distintos de source datadog_llmobs, associados a 56 conversation_ids distintos; a faixa técnica derivada dos trace IDs é 2026-06-05 a 2026-06-16 (UTC)."
+kind: fact
+source:
+  type: repository
+  uri: "/Users/bruno.segantin/orca/workspaces/ze-consumer-whatsapp-orchestrator-app/melhoria-tom-de-voz/tests/search_evals/datasets/prod_search_inputs.jsonl"
+  retrieved_at: "2026-09-30"
+scope:
+  population: "Registros preservados no dataset de inputs de busca de produção"
+  time_window: "2026-06-05 a 2026-06-16, inferido do componente temporal dos trace IDs"
+freshness: stale
+relationship: supports
+criticality: critical
+status: evidenced
+limitations:
+  - "O arquivo não inclui timestamp de turno, ambiente, tenant, critério de exportação ou transcript completo; a janela é uma inferência técnica dos IDs."
+  - "Os 129 traces não equivalem a 129 conversas; a contagem observada de conversation_id é 56."
+  - "A faixa técnica conflita com a data de teste 23/07 informada pelo stakeholder e requer reconciliação de escopo."
+```
+
+## Atualização da lacuna de produção — 2026-09-30
+
+O recorte recente confirma que as jornadas e as superfícies de resposta continuam instrumentadas em produção (E-009), mas é pequeno demais para estimar prevalência. O export histórico oferece profundidade de traces (E-010), mas pertence a uma janela diferente e não declara sua consulta de origem. `U-003` permanece crítico até que a coorte de decisão seja reconciliada e/ou a prevalência atual seja aceita explicitamente como risco.

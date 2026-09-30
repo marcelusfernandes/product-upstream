@@ -51,7 +51,7 @@ Esses impactos são hipóteses de investigação, não resultados comprovados.
 
 ### Problem Knowledge — not-met
 
-Os traces dão exemplos e sinais, mas não revelam recência, prevalência, causalidade, satisfação, abandono ou a distribuição dos padrões por jornada. A incógnita `U-003` pode mudar a priorização e a formulação de impacto.
+Os traces dão exemplos e sinais, mas não revelam recência, prevalência, causalidade, satisfação, abandono ou a distribuição dos padrões por jornada. O dataset histórico contém 129 traces em 56 conversas na faixa técnica de 05–16/06/2026 (E-010); o recorte recente de 23/07–30/09 retorna quatro workflows em duas sessões, cobrindo small_talk, address e commerce (E-009). A segunda amostra confirma continuidade de jornadas, mas não mede sua frequência. A incoerência entre a data de teste informada (23/07) e a janela do export histórico precisa ser resolvida antes de usar os dados para priorização. A incógnita `U-003` pode mudar a priorização e a formulação de impacto.
 
 ### Estados derivados
 
@@ -63,3 +63,13 @@ Os traces dão exemplos e sinais, mas não revelam recência, prevalência, caus
 ## Único gap crítico seguinte
 
 **U-003: validar em recorte atual quais padrões continuam ativos, em quais jornadas e com qual frequência/impacto.** Isso separa defeitos históricos de comportamentos atuais e permite priorizar o problema sem confundir tom com falhas de contexto, segurança ou dados.
+
+## Human gate — coorte de decisão para U-003
+
+O dataset histórico e a consulta recente não representam a mesma janela. O upstream não vai presumir que 129 traces de 05–16/06/2026 representem o teste de 23/07 mencionado no intake, nem que quatro workflows recentes sejam suficientes para medir incidência.
+
+- **Question:** qual coorte deve embasar a priorização da Issue 377: o export histórico de 05–16/06, uma coorte ainda não localizada de 23/07 em diante, ou ambos com papéis distintos?
+- **Options:** (a) confirmar que o export de junho é o teste em escopo; (b) indicar/localizar o export de 23/07 ou a consulta Datadog correspondente; (c) usar junho para mapear padrões e aceitar explicitamente a ausência de prevalência atual como risco.
+- **Recommendation:** opção (b); até lá, usar junho apenas como evidência histórica de padrões e o recorte recente apenas como evidência de que jornadas/superfícies seguem ativas.
+- **Impact:** sem essa decisão, o upstream não pode ordenar jornadas por frequência/impacto atual; `Problem` permanece `Investigate` e `Solution` permanece `Explore`.
+- **Blocks:** formulação de impacto mensurável, critérios de sucesso e qualquer transição para `Problem = Ready`.
