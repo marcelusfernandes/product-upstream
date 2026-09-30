@@ -4,6 +4,8 @@
 
 Resolver as assumptions críticas de `solution-shape.md` sem implementar produto no upstream. Evidência de ambiente, piloto ou aprovação deve ser adicionada pelo responsável apropriado; este plano define o protocolo e os critérios de decisão.
 
+**Autorização atual:** validação interna aprovada por D-007. Piloto controlado com pessoas usuárias não está autorizado nesta fase.
+
 | ID | Assumption | Evidência exigida | Pass | Falha / próximo passo | Owner proposto |
 |---|---|---|---|---|---|
 | V-001 | O contrato alcança todas as superfícies. | Inventário assinado que mapeie cada origem de resposta ao contrato ou fallback; teste de cobertura por superfície. | 100% das superfícies da tabela de enforcement mapeadas e cobertas. | Superfície sem adaptador/teste: retornar a shape/delivery. | Engenharia + Conversational AI. |

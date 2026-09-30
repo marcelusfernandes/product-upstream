@@ -476,6 +476,25 @@ limitations:
 ```
 
 ```yaml
+id: D-007
+claim: "O stakeholder autorizou a validação interna do contrato de identidade; piloto controlado com pessoas usuárias permanece sujeito a decisão posterior."
+kind: decision
+source:
+  type: interview
+  uri: "Confirmação explícita do stakeholder no intake"
+  retrieved_at: "2026-09-30"
+scope:
+  population: "Ambiente interno, casos simulados e revisões cross-functional"
+  time_window: "Fase atual de Solution Validate"
+freshness: current
+relationship: supports
+criticality: critical
+status: evidenced
+limitations:
+  - "Não autoriza deploy, experimento com clientes, coleta adicional de conteúdo conversacional ou piloto de produção."
+```
+
+```yaml
 id: E-014
 claim: "A amostra recente de produção contém workflows com env:prod e git.commit.sha 85c6f036e8829060a2ff1eadd66be633942562c1, o mesmo commit do código analisado; ao menos uma sessão traz a abertura 'Zé no Zap' e a apresentação de endereço antes da interação subsequente."
 kind: fact
