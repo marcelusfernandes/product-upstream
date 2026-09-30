@@ -134,6 +134,7 @@ criticality: critical
 status: evidenced
 limitations:
   - "O guia é normativo; não demonstra por si só a incidência dos comportamentos atuais."
+  - "O próprio arquivo está marcado como draft-for-brand-core-review; ele não é aprovação final de Brand Core."
 ```
 
 ```yaml
@@ -153,7 +154,7 @@ criticality: critical
 status: evidenced
 limitations:
   - "O documento inclui recomendações de fluxo, privacidade e segurança além do escopo de tom."
-  - "A redação operacional exata de identificação do assistente requer confirmação das áreas responsáveis."
+  - "O documento recomenda transparência contínua e não antropomorfização, mas seu exemplo de abertura usa 'Sou o Zé, assistente virtual'; isso conflita com o requisito de não se identificar como o próprio Zé (E-002) e exige reconciliação formal."
 ```
 
 ```yaml
@@ -374,6 +375,25 @@ status: evidenced
 limitations:
   - "A ausência de arquivo neste worktree não prova que o export não exista em outro ambiente, máquina, conta ou sistema."
   - "A captura de debug não é evidência de tráfego de produção nem de prevalência."
+```
+
+```yaml
+id: U-004
+claim: "Qual redação e regra de precedência aprovadas definem a identidade do assistente: o exemplo de Ética 'Sou o Zé, assistente virtual' ou o requisito de se apresentar como assistente de compras com IA do Zé Delivery, sem se identificar como o próprio Zé?"
+kind: unknown
+source:
+  type: observation
+  uri: "Contradição entre E-002 e E-005"
+  retrieved_at: "2026-09-30"
+scope:
+  population: "Toda apresentação e autorreferência do assistente no WhatsApp"
+  time_window: "Regra de lançamento e critérios de aceitação"
+freshness: current
+relationship: does-not-resolve
+criticality: critical
+status: unverified
+limitations:
+  - "Sem uma regra de precedência aprovada, não é possível transformar a identidade em critério de aceitação ou validar uma solução."
 ```
 
 ## Atualização da lacuna de produção — 2026-09-30

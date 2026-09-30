@@ -78,6 +78,17 @@ Os traces dão exemplos e sinais, mas não revelam recência, prevalência, caus
 - O worktree não contém outro export bruto da coorte de 24/07 (E-013). O stakeholder autorizou prosseguir com os traces disponíveis (D-002).
 - **Problem Knowledge está pendente de revisão adversarial**: a limitação de prevalência atual foi explicitamente aceita para a formulação qualitativa do problema, mas não para alegações de impacto mensurável.
 
+## Reframing após revisão adversarial
+
+A revisão independente reprovou `Problem = Ready`: ela identificou que o framing anterior misturava problemas de identidade/tom com falhas de contexto, catálogo e privacidade, e que a regra de identidade tem fontes conflitantes. O problema foi decomposto em quatro dimensões (ver `problem-framing.md`).
+
+Após a decomposição, **Problem Definition volta a met** para a dimensão em escopo da Issue: o assistente não possui uma identidade conversacional única, aprovada e operacionalizada entre abertura, prompts e guardrails. **Problem Knowledge permanece not-met**, pois `U-004` pode alterar a regra central e os critérios de aceitação.
+
+| Objeto | Definition | Knowledge | Estado | Evidências |
+|---|---|---|---|---|
+| Problem | concrete | unknown | Investigate | E-002, E-004–E-007, E-009–E-013, U-004 |
+| Solution | vague | unknown | Explore | E-004, E-005, U-004 |
+
 ## Human gate — coorte de decisão para U-003
 
 O dataset histórico antecede o teste confirmado de 24/07/2026, e a consulta ampla dessa semana está vazia no Datadog acessível hoje. O upstream não vai presumir que 129 traces de 05–16/06 representam o teste de julho, nem que quatro workflows recentes sejam suficientes para medir incidência.
