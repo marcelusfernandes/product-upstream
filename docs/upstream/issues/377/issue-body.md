@@ -15,8 +15,12 @@ O produto deve se apresentar como **“assistente de compras com IA do Zé Deliv
 ## Evidências e contexto disponível
 
 - **E-001 — GitHub / Issue 377:** a demanda anterior cita alinhamento de tom de voz e redução do uso de “mano”.
-- **E-002 — Input do stakeholder:** a identidade deve refletir o Zé Delivery, atender alinhamentos jurídicos, evitar estranheza nas respostas e não personificar o assistente como “Zé”. A fonte documental de Ética ainda precisa ser vinculada neste workspace.
+- **E-002 — Input do stakeholder:** a identidade deve refletir o Zé Delivery, atender alinhamentos jurídicos, evitar estranheza nas respostas e não personificar o assistente como “Zé”.
 - **E-003 — Comentário na Issue 377:** a construção e validação do branding dependem de informações a levantar com Marketing.
+- **E-004 — Guia de Marketing:** estabelece o papel do assistente de compras e prioriza segurança, fatos confirmados e clareza acima de tom e humor.
+- **E-005 — Recomendações de Ética Digital:** exige transparência contínua sobre a automação e evita antropomorfização que faça parecer que a pessoa interage com um humano.
+- **E-006 — Relatório de traces:** registra padrões observáveis de abertura, oferta precoce, tom repetitivo, personalização e contexto que precisam de investigação de recência e prevalência.
+- **E-007 — Leitura técnica:** mostra que a identidade e o tom estão distribuídos entre abertura, prompts, nós e guardrails.
 
 ## Escopo inicial
 
@@ -39,6 +43,6 @@ O produto deve se apresentar como **“assistente de compras com IA do Zé Deliv
 
 ## Estado inicial de upstream
 
-- **Problem:** Explore — a demanda indica um fenômeno, mas ainda não há população, contexto observável, exemplos, frequência ou impacto suficientes para um problem statement concreto.
+- **Problem:** Investigate — há um problema concreto, mas ainda faltam recência, prevalência e impacto por jornada para priorização segura.
 - **Solution:** Explore — não há intervenção, regras operacionais completas, fluxos/estados ou validação definidos.
-- **Próximo gap crítico:** vincular e normalizar os guias de Marketing e as recomendações de Ética; em seguida, localizar exemplos concretos de conversas e seus impactos.
+- **Próximo gap crítico:** validar, em recorte atual, quais padrões continuam ativos, em quais jornadas e com qual frequência/impacto.

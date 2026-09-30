@@ -38,3 +38,28 @@ Esses impactos são hipóteses de investigação, não resultados comprovados.
 |---|---|---|---|---|
 | Problem | vague | unknown | Explore | E-001, E-002, E-003, U-001, U-002 |
 | Solution | vague | unknown | Explore | E-001, E-002, E-003, U-002 |
+
+## Re-assessment após fontes de Marketing, Ética e traces
+
+### Problem Definition — met
+
+- **Estado atual observável:** o relatório de traces registra aberturas genéricas, oferta alcoólica antes de intenção, repetição de bordões/emoji, personalização não solicitada e perda de contexto em respostas do assistente (E-006).
+- **População e contexto:** 109 pares de turnos em 45 conversas de um export descrito como tráfego de produção; a janela e a representatividade são limitadas (E-006).
+- **Gap observável:** esses comportamentos conflitam com as prioridades de clareza, segurança e resolução do guia de Marketing (E-004) e aumentam o risco ético de antropomorfização e baixa transparência sobre IA (E-005).
+- **Outcome desejado:** a pessoa deve reconhecer que fala com o assistente de compras com IA do Zé Delivery, receber respostas claras, contextuais e verificáveis, e encontrar leveza apenas quando ela não comprometer segurança ou confiança (E-004, E-005).
+- **Escopo:** identidade verbal, apresentação, tom e comportamento conversacional relacionados aos padrões observados. Não cobre a reescrita integral de fluxos de segurança, privacidade ou commerce.
+
+### Problem Knowledge — not-met
+
+Os traces dão exemplos e sinais, mas não revelam recência, prevalência, causalidade, satisfação, abandono ou a distribuição dos padrões por jornada. A incógnita `U-003` pode mudar a priorização e a formulação de impacto.
+
+### Estados derivados
+
+| Objeto | Definition | Knowledge | Estado | Evidências |
+|---|---|---|---|---|
+| Problem | concrete | unknown | Investigate | E-001–E-006, U-003 |
+| Solution | vague | unknown | Explore | E-004, E-005, E-006, U-003 |
+
+## Único gap crítico seguinte
+
+**U-003: validar em recorte atual quais padrões continuam ativos, em quais jornadas e com qual frequência/impacto.** Isso separa defeitos históricos de comportamentos atuais e permite priorizar o problema sem confundir tom com falhas de contexto, segurança ou dados.
