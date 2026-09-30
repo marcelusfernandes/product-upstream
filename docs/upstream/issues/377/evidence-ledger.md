@@ -437,6 +437,26 @@ limitations:
 ```
 
 ```yaml
+id: D-005
+claim: "O stakeholder aprovou o contrato transversal de identidade como mecanismo de solução da Issue 377."
+kind: decision
+source:
+  type: interview
+  uri: "Confirmação explícita do stakeholder no intake"
+  retrieved_at: "2026-09-30"
+scope:
+  population: "Abertura, geração, recuperação e avaliação do assistente no WhatsApp"
+  time_window: "Fase de shape da solução"
+freshness: current
+relationship: supports
+criticality: critical
+status: evidenced
+limitations:
+  - "A aprovação seleciona o mecanismo; não aprova a redação final de Marketing, Ética ou Jurídico."
+  - "Não autoriza implementação de produto durante o upstream."
+```
+
+```yaml
 id: E-014
 claim: "A amostra recente de produção contém workflows com env:prod e git.commit.sha 85c6f036e8829060a2ff1eadd66be633942562c1, o mesmo commit do código analisado; ao menos uma sessão traz a abertura 'Zé no Zap' e a apresentação de endereço antes da interação subsequente."
 kind: fact
