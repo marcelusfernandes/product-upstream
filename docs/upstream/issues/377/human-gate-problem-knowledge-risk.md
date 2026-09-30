@@ -1,6 +1,6 @@
 ## Human gate — aceitar U-003 para correção mandatória
 
-**Status: aguardando decisão.**
+**Status: resolvido em 2026-09-30.** O stakeholder aprovou a opção 1 (D-004).
 
 ### Question
 
@@ -24,3 +24,7 @@ Opção 1. A decisão D-003 é uma regra de produto/ética; a ausência de preva
 ### Impact
 
 Com a opção 1, `Problem` pode avançar para `Ready` e a solução será explorada com critérios de conformidade. Com a opção 2, `Problem` permanece `Investigate`.
+
+### Decision
+
+U-003 foi aceito como risco limitado. A iniciativa avançará como correção mandatória de identidade/transparência; métricas de sucesso devem verificar aderência, não alegar impacto quantitativo.

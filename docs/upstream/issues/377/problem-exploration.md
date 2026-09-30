@@ -99,6 +99,15 @@ A checagem independente posterior a D-003 concluiu:
 
 O único gate remanescente é decidir se a obrigatoriedade de identidade (D-003), somada à ocorrência atual observada (E-014), basta para avançar como correção de conformidade — com métricas de sucesso de aderência — apesar de U-003. Sem essa aceitação explícita, `Problem` permanece `Investigate`.
 
+## Transição para Problem Ready
+
+O stakeholder aceitou explicitamente U-003 como risco limitado para uma correção mandatória (D-004). Assim, a evidência é suficiente para decidir o problema em escopo — identidade e transparência — sem alegar prevalência ou impacto quantitativo.
+
+| Objeto | Definition | Knowledge | Estado | Evidências |
+|---|---|---|---|---|
+| Problem | concrete | known | Ready | E-002, E-004–E-007, E-009–E-014, D-001–D-004 |
+| Solution | vague | unknown | Explore | E-004, E-005, E-007, D-003, D-004 |
+
 ## Human gate — coorte de decisão para U-003
 
 O dataset histórico antecede o teste confirmado de 24/07/2026, e a consulta ampla dessa semana está vazia no Datadog acessível hoje. O upstream não vai presumir que 129 traces de 05–16/06 representam o teste de julho, nem que quatro workflows recentes sejam suficientes para medir incidência.

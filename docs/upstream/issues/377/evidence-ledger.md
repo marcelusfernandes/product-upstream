@@ -417,6 +417,26 @@ limitations:
 ```
 
 ```yaml
+id: D-004
+claim: "O stakeholder aceitou U-003 como risco para avançar a Issue 377 como correção mandatória de identidade/transparência; sucesso será avaliado por aderência verificável, não por impacto quantitativo."
+kind: decision
+source:
+  type: interview
+  uri: "Confirmação explícita do stakeholder no intake"
+  retrieved_at: "2026-09-30"
+scope:
+  population: "Decisão de readiness e critérios de sucesso da iniciativa"
+  time_window: "Enquanto não houver coorte representativa adicional"
+freshness: current
+relationship: supports
+criticality: critical
+status: evidenced
+limitations:
+  - "Não autoriza alegações de redução de abandono, aumento de conversão, confiança ou satisfação."
+  - "Não substitui a coleta futura de uma coorte representativa para priorização ou mensuração de impacto."
+```
+
+```yaml
 id: E-014
 claim: "A amostra recente de produção contém workflows com env:prod e git.commit.sha 85c6f036e8829060a2ff1eadd66be633942562c1, o mesmo commit do código analisado; ao menos uma sessão traz a abertura 'Zé no Zap' e a apresentação de endereço antes da interação subsequente."
 kind: fact
@@ -439,6 +459,8 @@ limitations:
 ## Atualização de identidade — 2026-09-30
 
 `U-004` está resolvida para a definição da Issue por D-003. O exemplo “Sou o Zé, assistente virtual” em E-005 permanece como contradição documental a atualizar pelas áreas responsáveis, mas não define mais a regra de produto desta iniciativa.
+
+`U-003` permanece como limitação de evidência, mas foi explicitamente aceita como risco limitado por D-004 para que a correção mandatória avance. Ela não poderá ser usada para justificar impacto quantitativo.
 
 ## Atualização da lacuna de produção — 2026-09-30
 
