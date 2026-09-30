@@ -12,7 +12,7 @@ A execução do upstream é Codex-native:
 - `AGENTS.md` prende invariantes e o loop autônomo;
 - `.codex/agents/*.toml` define papéis especializados;
 - `.agents/skills/*/SKILL.md` contém procedimentos reutilizáveis;
-- GitHub issues, milestones, labels e comentários tornam o estado visível;
+- uma GitHub Issue canônica por iniciativa, com comentários em timeline, torna o estado visível; milestones, labels e sub-issues complementam o tracking;
 - scripts pequenos validam apenas regras mecânicas;
 - **não existem workflows JSON do Lohra nem chamadas ao runtime Lohra**.
 

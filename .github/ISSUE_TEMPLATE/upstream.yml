@@ -3,6 +3,13 @@ description: Iniciativa upstream para reduzir incerteza de Problem/Solution ante
 title: "upstream: "
 body:
   - type: textarea
+    id: source
+    attributes:
+      label: Source issue / links
+      description: Link da demanda de origem e demais referências. A Issue criada será a timeline canônica do upstream.
+    validations:
+      required: true
+  - type: textarea
     id: hypothesis
     attributes:
       label: Starting hypothesis / signal
@@ -62,3 +69,8 @@ body:
     id: refs
     attributes:
       label: References
+  - type: markdown
+    attributes:
+      value: |
+        Preserve este corpo como snapshot de intake. Registre evidências, decisões,
+        gates, revisões e transições nos comentários cronológicos da Issue.

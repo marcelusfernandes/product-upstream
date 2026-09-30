@@ -25,13 +25,16 @@ Para qualquer hipótese, oportunidade ou demanda de produto não trivial:
 - Problem e Solution só mudam de quadrante com justificativa + evidence refs.
 - Reviewer não edita o artefato que revisa.
 - Silêncio nunca é aprovação de human gate.
-- GitHub é o estado operacional; documentos são síntese.
+- **Issue-first timeline:** toda iniciativa upstream não trivial tem uma única GitHub Issue canônica. Ela é o estado operacional e a linha do tempo da iniciativa.
+- Registre em comentários da Issue todo input material, evidência, decisão, human gate, revisão adversarial, transição de estado e handoff. Documentos são síntese e devem referenciar a Issue; branches nunca substituem tracking.
+- Preserve o sinal original no corpo da Issue. Não reescreva seu histórico para incorporar conclusões posteriores; use comentários datados para evolução e correção.
+- Branches só versionam documentação, automação ou delivery quando necessário. Nunca trate push, branch ou PR como evidência de progresso upstream sem o comentário correspondente na Issue.
 - Não implemente código de produto durante o upstream, salvo spike/experimento
   explicitamente autorizado como parte de validação.
 
 ## Orchestrator loop
 
-1. Reconcile tracking existente no GitHub.
+1. Reconcile a Issue canônica e sua timeline no GitHub; se não existir, crie-a antes de produzir artefatos locais.
 2. Preserve a formulação original da hipótese/sinal.
 3. Assess Problem e Solution.
 4. Identifique o único gap crítico que mais reduz incerteza para a decisão.
@@ -39,7 +42,7 @@ Para qualquer hipótese, oportunidade ou demanda de produto não trivial:
 6. Delegue subtarefas delimitadas aos agentes adequados.
 7. Faça revisão adversarial quando a conclusão for usada para mudar estado.
 8. Re-assess após evidência/decisão material.
-9. Registre transições no tracking usando `templates/state-transition-comment.md`.
+9. Registre transições e marcos materiais na timeline da Issue usando `templates/state-transition-comment.md`.
 10. Pare em human gate.
 11. Pare o upstream em `Problem Ready + Solution Deliver + readiness approved`.
 12. Compile o delivery package e encerre.
