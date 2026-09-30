@@ -457,6 +457,25 @@ limitations:
 ```
 
 ```yaml
+id: D-006
+claim: "Produto/Conversational AI é o owner formal proposto do contrato; Brand Core, Ética e Jurídico são os aprovadores obrigatórios da cópia e da versão elegível a release."
+kind: decision
+source:
+  type: interview
+  uri: "Confirmação explícita do stakeholder no intake"
+  retrieved_at: "2026-09-30"
+scope:
+  population: "Governança do contrato transversal de identidade"
+  time_window: "Validação e release da versão do contrato"
+freshness: current
+relationship: supports
+criticality: critical
+status: evidenced
+limitations:
+  - "A decisão define papéis; não substitui a aprovação efetiva da cópia por cada área."
+```
+
+```yaml
 id: E-014
 claim: "A amostra recente de produção contém workflows com env:prod e git.commit.sha 85c6f036e8829060a2ff1eadd66be633942562c1, o mesmo commit do código analisado; ao menos uma sessão traz a abertura 'Zé no Zap' e a apresentação de endereço antes da interação subsequente."
 kind: fact

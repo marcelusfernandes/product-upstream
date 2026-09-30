@@ -14,7 +14,7 @@ Esta é uma regra de produto da iniciativa (D-003). A redação final, inclusõe
 
 ### Owner e formato
 
-**Owner proposto:** Produto/Conversational AI. Brand Core, Ética e Jurídico aprovam o conteúdo normativo; Engenharia mantém os adaptadores de cada superfície. A nomeação formal do owner é requisito do handoff, não uma mudança de responsabilidade automática.
+**Owner formal:** Produto/Conversational AI (D-006). Brand Core, Ética e Jurídico aprovam o conteúdo normativo e a versão elegível a release; Engenharia mantém os adaptadores de cada superfície.
 
 O contrato é um artefato versionado, com os campos conceituais abaixo. A escolha de formato de código fica para delivery.
 

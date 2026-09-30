@@ -14,3 +14,9 @@
 - **Affected artifacts:** prompts, coordinator, guardrails de recuperação, avaliações e guias aprovados.
 - **Status:** approved for solution shape.
 - **Owner approval ref:** input explícito do stakeholder em 2026-09-30: “pode seguir com a opcao 2”.
+
+## Governança definida
+
+- **Owner formal:** Produto/Conversational AI.
+- **Aprovadores obrigatórios de cópia e release:** Brand Core, Ética e Jurídico.
+- **Ref:** decisão explícita do stakeholder em 2026-09-30 (D-006).
