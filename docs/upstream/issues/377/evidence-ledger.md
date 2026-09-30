@@ -495,6 +495,26 @@ limitations:
 ```
 
 ```yaml
+id: D-008
+claim: "O stakeholder aprovou as cópias candidatas para uso na validação interna da Issue 377."
+kind: decision
+source:
+  type: interview
+  uri: "Confirmação explícita do stakeholder no intake"
+  retrieved_at: "2026-09-30"
+scope:
+  population: "Matriz interna de avaliação de conteúdo e comportamento"
+  time_window: "Fase interna de Solution Validate"
+freshness: current
+relationship: supports
+criticality: critical
+status: evidenced
+limitations:
+  - "A aprovação do stakeholder não substitui `approval_refs` formais de Brand Core, Ética e Jurídico para release."
+  - "Não autoriza inserir a cópia em produção, prompts ou templates ativos."
+```
+
+```yaml
 id: E-014
 claim: "A amostra recente de produção contém workflows com env:prod e git.commit.sha 85c6f036e8829060a2ff1eadd66be633942562c1, o mesmo commit do código analisado; ao menos uma sessão traz a abertura 'Zé no Zap' e a apresentação de endereço antes da interação subsequente."
 kind: fact

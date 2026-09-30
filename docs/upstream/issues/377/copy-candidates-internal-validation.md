@@ -1,6 +1,6 @@
 # Cópias candidatas para validação interna — Issue 377
 
-**Status: proposta para revisão; não aprovada para release.**
+**Status: aprovada pelo stakeholder para validação interna (D-008); não aprovada para release.**
 
 Estas cópias operacionalizam D-003 e servem somente à validação interna D-007. Os links, termos legais, cadência definitiva de transparência e canais de suporte devem ser aprovados por Brand Core, Ética e Jurídico.
 
