@@ -102,6 +102,28 @@ limitations:
   - "Uma instrução interna de prompt pode afetar a saída, mas não prova isoladamente a redação de cada mensagem gerada."
 ```
 
+## E-009 — Revisão observada em produção e condição da abertura
+
+```yaml
+id: E-009
+claim: "Uma busca de 2026-09-01 a 2026-10-01 retornou oito workflows raiz whatsapp_message em env:prod, de três sessões, todos marcados com git.commit.sha e version 85c6f036e8829060a2ff1eadd66be633942562c1. Nesse commit, a abertura estática é chamada quando a sessão é nova e o endereço ainda não está confirmado."
+kind: fact
+source:
+  type: observability+repository
+  uri: "Datadog LLM Observability: search_llmobs_spans(ml_app=ze-consumer-whatsapp-orchestrator, span_kind=workflow, span_name=whatsapp_message, root_spans_only=true); src/coordinator/message_coordinator.py"
+  retrieved_at: "2026-10-01"
+scope:
+  population: "Oito workflows raiz retornados pela consulta e o caminho condicional de abertura no commit marcado"
+  time_window: "2026-09-01 a 2026-10-01 para a consulta; estado do worktree para o código"
+freshness: current
+relationship: supports
+criticality: critical
+status: evidenced
+limitations:
+  - "A consulta é uma amostra acessível, não uma contagem de tráfego ou prevalência."
+  - "Os metadados consultados não demonstram que qualquer um dos oito workflows atendia à condição de sessão nova sem endereço confirmado, nem confirmam a mensagem entregue."
+```
+
 ## Contradição e unknowns vigentes
 
 - **U-001:** como operacionalizar a transparência de E-006 junto à restrição de
@@ -112,8 +134,9 @@ limitations:
   qual frequência, severidade ou impacto.
 - **U-003:** se P-01 a P-04 da exploração descrevem problemas separados,
   sintomas de um mesmo problema ou casos fora de escopo.
-- **U-004:** qual revisão está efetivamente em produção e quais superfícies de
-  identidade alcançam pessoas usuárias em cada jornada.
+- **U-004 (parcial):** E-009 confirma a revisão em uma amostra de produção;
+  ainda falta confirmar quais superfícies de identidade alcançam pessoas
+  usuárias em cada jornada.
 
 ## O que este ledger não permite concluir
 
