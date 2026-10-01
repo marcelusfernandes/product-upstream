@@ -80,6 +80,28 @@ limitations:
   - "Não define por si só gatilhos, redação completa, exceções ou critérios de release."
 ```
 
+## E-008 — Estado técnico observado
+
+```yaml
+id: E-008
+claim: "No commit 85c6f036e8829060a2ff1eadd66be633942562c1, a abertura de sessão emitida diretamente diz 'você chegou no Zé no Zap' e lista cerveja e destilado; os prompts de agente, guardrails e moderator também definem a persona como 'Você é o Zé'."
+kind: fact
+source:
+  type: repository
+  uri: "/Users/bruno.segantin/orca/workspaces/ze-consumer-whatsapp-orchestrator-app/melhoria-tom-de-voz/src/{coordinator/message_coordinator.py,orchestration/prompts/{agent.py,guardrails.py,moderator.py}}"
+  retrieved_at: "2026-10-01"
+scope:
+  population: "Aberturas de sessão e respostas geradas pelos caminhos que consomem essas constantes/prompts na revisão de código observada"
+  time_window: "Estado do worktree no momento da leitura"
+freshness: unknown
+relationship: supports
+criticality: critical
+status: evidenced
+limitations:
+  - "A leitura prova o comportamento definido neste commit, não que ele esteja em produção nem a frequência de cada caminho."
+  - "Uma instrução interna de prompt pode afetar a saída, mas não prova isoladamente a redação de cada mensagem gerada."
+```
+
 ## Contradição e unknowns vigentes
 
 - **U-001:** como operacionalizar a transparência de E-006 junto à restrição de
@@ -90,6 +112,8 @@ limitations:
   qual frequência, severidade ou impacto.
 - **U-003:** se P-01 a P-04 da exploração descrevem problemas separados,
   sintomas de um mesmo problema ou casos fora de escopo.
+- **U-004:** qual revisão está efetivamente em produção e quais superfícies de
+  identidade alcançam pessoas usuárias em cada jornada.
 
 ## O que este ledger não permite concluir
 
