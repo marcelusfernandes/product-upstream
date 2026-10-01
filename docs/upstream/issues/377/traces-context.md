@@ -58,6 +58,28 @@ limitations:
   - "A disponibilidade depende de retenção, filtros, tenant, permissões e instrumentação."
 ```
 
+## E-TR-004 — Estrutura do export histórico
+
+```yaml
+id: E-TR-004
+claim: "Os 129 registros do export pertencem ao bucket prod_search_inputs: 60 search_direct, 50 search_multi_turn e 19 ocasiao. Cada registro contém mensagem, resposta anterior, conversation_id, trace_id e número de buscas; não contém transcript completo."
+kind: fact
+source:
+  type: repository
+  uri: "/Users/bruno.segantin/orca/workspaces/ze-consumer-whatsapp-orchestrator-app/melhoria-tom-de-voz/tests/search_evals/datasets/prod_search_inputs.jsonl"
+  retrieved_at: "2026-10-01"
+scope:
+  population: "Registros do export histórico E-TR-001"
+  time_window: "2026-06-05 a 2026-06-16 UTC, inferido do componente temporal dos trace IDs"
+freshness: stale
+relationship: constrains
+criticality: critical
+status: evidenced
+limitations:
+  - "O formato permite observar uma mensagem e, quando houver, a resposta imediatamente anterior; não permite reconstituir a jornada ou os turnos posteriores."
+  - "Os tipos de caso descrevem o dataset de busca, não categorias de problema, satisfação ou impacto."
+```
+
 ## E-TR-003 — Lacuna da coorte de teste
 
 ```yaml
